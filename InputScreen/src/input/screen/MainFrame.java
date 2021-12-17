@@ -12,8 +12,9 @@ import javax.swing.JPanel;
 
 public class MainFrame {
 	private JFrame mainFrame;
-	private JPanel textBoxPanel;
+	private JPanel textFieldPanel, checkBoxPanel, radioPanel;
 	private GridBagConstraints gbc;
+	
 	
 	public MainFrame() {
 		initialize();		
@@ -29,16 +30,32 @@ public class MainFrame {
 		mainFrame.setLocationRelativeTo(null);
 		mainFrame.getContentPane().setLayout(new GridBagLayout());
 		
-		textBoxPanel = new JPanel();
-		textBoxPanel.setBorder(BorderFactory.createTitledBorder("JTextBox Panel"));
-		textBoxPanel.setBackground(Color.RED);
-		textBoxPanel.setPreferredSize(new Dimension(300,200));
+		textFieldPanel = new JPanel();
+		textFieldPanel.setBorder(BorderFactory.createTitledBorder("JTextField Panel"));
+		textFieldPanel.setBackground(Color.RED);
+		textFieldPanel.setPreferredSize(new Dimension(200,100));
+		
+		checkBoxPanel = new JPanel();
+		checkBoxPanel.setBorder(BorderFactory.createTitledBorder("JCheckBox Panel"));
+		checkBoxPanel.setBackground(Color.GREEN);
+		checkBoxPanel.setPreferredSize(new Dimension(200,100));
+		
+		radioPanel = new JPanel();
+		radioPanel.setBorder(BorderFactory.createTitledBorder("JRadioButton Panel"));
+		radioPanel.setBackground(Color.CYAN);
+		radioPanel.setPreferredSize(new Dimension(200,100));
 		
 		gbc = new GridBagConstraints();
 		gbc.gridx=0;
 		gbc.gridy=0;
-		mainFrame.getContentPane().add(textBoxPanel,gbc);
-//		mainFrame.pack();
+		mainFrame.getContentPane().add(textFieldPanel,gbc);
+		gbc.gridx=1;
+		gbc.gridy=1;
+		mainFrame.getContentPane().add(checkBoxPanel,gbc);
+		gbc.gridx=2;
+		gbc.gridy=2;
+		mainFrame.getContentPane().add(radioPanel,gbc);
+		mainFrame.pack();
 		mainFrame.setVisible(true);
 	}
 }
