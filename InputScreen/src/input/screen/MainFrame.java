@@ -22,8 +22,8 @@ public class MainFrame {
 	private GridBagConstraints gbc;
 	private JTextField tfName, tfAge;
 	private JComboBox<String> cityCb;
-	private JRadioButton rbMale, rbFemale;
-	private ButtonGroup myGroup;
+	private JRadioButton rbMale, rbFemale, rbExt, rbAdv, rbInt, rbBeg;
+	private ButtonGroup myGroup, myGroup2;
 	private JCheckBox jCb1, jCb2, jCb3, jCb4, jCb5, jCb6;
 	
 	
@@ -90,6 +90,25 @@ public class MainFrame {
 		myGroup.add(rbMale);
 		myGroup.add(rbFemale);
 		
+		rbExt= new JRadioButton();
+		rbExt.setText("Extreme");
+		rbExt.setOpaque(false);
+		rbAdv= new JRadioButton();
+		rbAdv.setText("Advanced");
+		rbAdv.setOpaque(false);
+		rbInt= new JRadioButton();
+		rbInt.setText("Intermediate");
+		rbInt.setOpaque(false);
+		rbBeg= new JRadioButton();
+		rbBeg.setText("Beginner");
+		rbBeg.setOpaque(false);
+		myGroup2 = new ButtonGroup();
+		myGroup2.add(rbExt);
+		myGroup2.add(rbAdv);
+		myGroup2.add(rbInt);
+		myGroup2.add(rbBeg);
+		
+		
 		jCb1 = new JCheckBox("Running");
 		jCb2 = new JCheckBox("Walking");
 		jCb3 = new JCheckBox("Biking");
@@ -113,6 +132,11 @@ public class MainFrame {
 		checkBoxPanel.add(jCb4);
 		checkBoxPanel.add(jCb5);
 		checkBoxPanel.add(jCb6);
+		
+		radioPanel2.add(rbExt);
+		radioPanel2.add(rbAdv);
+		radioPanel2.add(rbInt);
+		radioPanel2.add(rbBeg);
 		
 		
 		gbc = new GridBagConstraints();
