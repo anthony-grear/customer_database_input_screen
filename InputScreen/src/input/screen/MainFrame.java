@@ -8,8 +8,10 @@ import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 
 import javax.swing.BorderFactory;
+import javax.swing.ButtonGroup;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
 
@@ -19,6 +21,8 @@ public class MainFrame {
 	private GridBagConstraints gbc;
 	private JTextField tfName, tfAge;
 	private JComboBox<String> cityCb;
+	private JRadioButton rbMale, rbFemale;
+	private ButtonGroup myGroup;
 	
 	
 	public MainFrame() {
@@ -69,10 +73,25 @@ public class MainFrame {
 		cityCb.addItem("Toledo");
 		cityCb.addItem("Dayton");
 		
+		rbMale = new JRadioButton();
+		rbMale.setText("Male");
+		rbMale.setOpaque(false);
+		rbFemale = new JRadioButton();
+		rbFemale.setText("Female");
+		rbFemale.setOpaque(false);
+		myGroup = new ButtonGroup();
+		myGroup.add(rbMale);
+		myGroup.add(rbFemale);
+		
+		
+		
 		textFieldPanel.add(tfName);
 		textFieldPanel.add(tfAge);
 		
 		comboBoxPanel.add(cityCb);
+		radioPanel.add(rbMale);
+		radioPanel.add(rbFemale);
+		
 		
 		
 		
